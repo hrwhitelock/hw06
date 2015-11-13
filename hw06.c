@@ -1,13 +1,11 @@
 #include <stdio.h>
 
+
 void caesar (char message[], int key);
 
 int main (void) {
-
-char message[50];
-int shift;
-	message[] = "SP S RKN"
-	for (i=1; i<11; i++){
+char message[] = "Sp S rkn kcuon zoyzvo grkd droi dkxdon, droi gyven rkfocksn pckcdob rycoc";
+	for (int i=1; i<25; i++){
   	caesar (message, i);
 	}
   return 0;
@@ -15,16 +13,31 @@ int shift;
 
 void caesar (char message[], int key) {
   int i = 0;
-
-  while (message[i] != '\0') {
-    if ((message[i] += key) >= 65 && (message[i] += key) <= 90) {
-      message[i] += (key);
-    } else {
-      message[i] += (key - 25); 
-    }
+  char messageOut[] = "Sp S rkn kcuon zoyzvo grkd droi dkxdon, droi gyven rkfocksn pckcdob rycoc"; //clunky and gross. will fix later
+    while (message[i] !='\0'){
+      if (message[i] != 32){
+         if(message[i]<91){
+            if (message[i]+key <= 90 ){
+              messageOut[i]+= key;
+           } 
+           else{
+              int temp =  26-key; 
+              messageOut[i] -= temp; 
+           }
+        }
+        else{
+          if(message[i]+key <= 122){
+             messageOut[i] +=key;
+          }
+          else{
+              int temp =  26-key; 
+              messageOut[i] -= temp;
+           }
+         }
+      }
     i++;
-  }
-  printf("%s", message);
+    }
+    printf("%s \n ", messageOut);
 }
 
 
