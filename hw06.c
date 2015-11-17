@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <string.h>
 
 void caesar (char message[], int key);
 
@@ -12,8 +12,11 @@ char message[] = "Sp S rkn kcuon zoyzvo grkd droi dkxdon, droi gyven rkfocksn pc
 }
 
 void caesar (char message[], int key) {
-  int i = 0;
-  char messageOut[] = "Sp S rkn kcuon zoyzvo grkd droi dkxdon, droi gyven rkfocksn pckcdob rycoc"; //clunky and gross. will fix later
+  char messageOut[264];
+  for (int j = 0; j<(int) strlen(message); j++){
+	messageOut[j] = message[j];
+  } 
+  int i = 0; 
     while (message[i] !='\0'){
       if (message[i] != 32){
          if(message[i]<91){
