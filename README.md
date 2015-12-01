@@ -1,3 +1,3 @@
 # hw06
 
-Files for Homework 6, caesar cipher. As it stands now, the program is rather clunky. In the future I would like to dynamically allocate memory for the dummy variable in the function caesar function, but for now, it runs. I would also like to allow for user input of a message. 
+Files for Homework 6, caesar cipher. There is one problem, for some reason it continues past the end of the message, and I have not yet taken the time to figure out why. will get done eventually. 
