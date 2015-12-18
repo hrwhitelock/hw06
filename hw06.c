@@ -4,7 +4,7 @@
 void caesar (char message[], int key);
 
 int main (void) {
-char message[] = "Sp S rkn kcuon zoyzvo grkd droi dkxdon, droi gyven rkfocksn pckcdob rycoc";
+char message[] = "Sp S rkn kcuon zoyzvo grkd droi gkxdon, droi gyven rkfocksn pckcdob rybcoc.";
 	//main function, sets what the message is and then trys all possible values of the key
 	for (int i=1; i<25; i++){
   	caesar (message, i);
@@ -21,26 +21,12 @@ void caesar (char message[], int key) {
   int i = 0; 
     while (message[i] !='\0'){
       //shifts each character that exists. separates between capital and lower case letters
-      if (message[i] != 32){
-         if(message[i]<91){
-            if (message[i]+key <= 90 ){
-              messageOut[i]+= key;
-           } 
-           else{
-              int temp =  26-key; 
-              messageOut[i] -= temp; 
-           }
-        }
-        else{
-          if(message[i]+key <= 122){
-             messageOut[i] +=key;
-          }
-          else{
-              int temp =  26-key; 
-              messageOut[i] -= temp;
-           }
-         }
-      }
+         if(message[i] >= 'a'&&  message[i]<='z'){
+    		messageOut[i] = (message[i] - 'a'+key)%26 + 'a';
+	 }
+	else if (message[i] >='A' && message[i] <='Z'){
+		messageOut[i] = (message[i] - 'A'+ key)%26 + 'A';
+	}
     i++;
     }
     printf("%s \n ", messageOut);
